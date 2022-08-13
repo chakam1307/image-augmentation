@@ -1,7 +1,10 @@
 import os
 import shutil
 
-for (path, dir, files) in os.walk("./data/"):
+data_path = './B7340_헤어드라이기/'
+
+
+for (path, dir, files) in os.walk(data_path):
     num = -1
     cate = path[-13:]
     for filename in files:
@@ -11,7 +14,7 @@ for (path, dir, files) in os.walk("./data/"):
         src = path+'/'+filename
         if num < 7:
             num += 1
-        des_path = './DT/'+ cate + '_' + str(num)
+        des_path = './DT' + data_path[1:]+ cate + '_' + str(num)
         
         if not os.path.exists(des_path):
             os.mkdir(des_path)
